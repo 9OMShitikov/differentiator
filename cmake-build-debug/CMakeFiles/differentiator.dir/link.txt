@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/differentiator.dir/main.cpp.o  -o differentiator 

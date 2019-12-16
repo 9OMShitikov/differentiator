@@ -1,0 +1,8 @@
+//
+// Created by oleg on 13.12.2019.
+//
+
+#ifndef DIFFERENTIATOR_FUNCTIONS_H
+#define DIFFERENTIATOR_FUNCTIONS_H
+
+#endif //DIFFERENTIATOR_FUNCTIONS_H
