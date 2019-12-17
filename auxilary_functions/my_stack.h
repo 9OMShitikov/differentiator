@@ -9,7 +9,7 @@
 #include <stdint.h>
 #include <iostream>
 
-#define DEBUG true
+#define DEBUG false
 #define CHECK if (DEBUG && check()) dump(check(), __FILE__, __LINE__, __FUNCTION__);
 enum my_stack_err_code {
     ok = 0,
@@ -41,7 +41,6 @@ private:
     }
     void dump (int err_code, const char file[], int line, const char function[]);
     int check();
-    int get_hash(void* start_ptr, int count);
 
 public:
     ///Stack initializer (empty)

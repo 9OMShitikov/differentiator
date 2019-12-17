@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/read_expr.dir/main_files/reader.cpp.o  -o read_expr 

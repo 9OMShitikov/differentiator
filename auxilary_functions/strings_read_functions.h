@@ -22,7 +22,8 @@ public:
         ptr = nullptr;
     }
     ~AutoFree() {
-        std::free(ptr);
+        if (ptr != NULL)
+            std::free(ptr);
     }
     AutoFree(const AutoFree&) =  delete;
     void operator=(const AutoFree&) = delete;

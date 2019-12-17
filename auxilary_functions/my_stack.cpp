@@ -14,7 +14,6 @@ my_stack<T>::my_stack():
     buff -> buff_size_copy = buff->buff_size;
     buff -> size = buff->size;
     *second_canary_ptr() = 265;
-    buff -> hsh = get_hash(reinterpret_cast<char*>(&(buff->buff)), buff->size * sizeof(T));
 }
 
 template <class T>
@@ -70,8 +69,6 @@ void my_stack<T>::dump (int err_code, const char file[], int line, const char fu
         std::cerr<<buff->size<<std::endl;
         std::cerr<<"buff_size value:"<<std::endl;
         std::cerr<<buff->buff_size<<std::endl;
-        std::cerr<<"Buffer hash last value: "<<buff->hsh<<std::endl;
-        std::cerr<<"Buffer hash      value: "<<get_hash(reinterpret_cast<char*>(&(buff->buff)), buff->size * sizeof(T))<<std::endl;
         std::cerr<<"Buffer:"<<std::endl;
         for (int i = 0; i < buff->buff_size; ++i) {
             if (i < buff->size) std::cerr<<"*";
@@ -90,25 +87,13 @@ int my_stack<T>::check() {
         return sizes_broken;
     if (buff->size < 0 || buff->buff_size <= 0 || buff->size > buff->buff_size)
         return sizes_broken;
-    if (buff->hsh != get_hash(reinterpret_cast<char*>(&(buff->buff)), buff->size * sizeof(T)) ||
-        buff->first_canary != 265 ||
+    if (buff->first_canary != 265 ||
         *second_canary_ptr() != 265)
     {
         return buff_broken;
     }
     return ok;
 }
-
-template <class T>
-int my_stack<T>::get_hash(void* start_ptr, int count) {
-    if (!(DEBUG)) return 0;
-    int64_t ans = 0;
-    for (int i = 0; i < count; ++i) {
-        ans = (ans * 257 + reinterpret_cast<char*>(start_ptr)[i] + 1) % 1000000007;
-    }
-    return int(ans);
-}
-
 
 template <class T>
 bool my_stack<T>::push_back(T elem) {
@@ -122,7 +107,6 @@ bool my_stack<T>::push_back(T elem) {
     buff->size++;
     buff -> buff_size_copy = buff->buff_size;
     buff -> size_copy = buff->size;
-    buff -> hsh = get_hash(reinterpret_cast<char*>(&(buff->buff)), buff->size * sizeof(T));
     CHECK
     return 1;
 }

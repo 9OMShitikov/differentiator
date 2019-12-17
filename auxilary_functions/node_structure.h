@@ -3,13 +3,16 @@
 //
 
 #ifndef DIFFERENTIATOR_NODE_STRUCTURE_H
-#define DIFFERENTIATOR_NODE_STRUCTURE_H
+
+#include "strings_read_functions.h"
+const int MAX_NAME_SIZE = 100;
+
 enum node_types {
-    operator_node = 0,
+    empty_node = 0,
     function_node = 1,
     variable_node = 2,
     constant_node = 3,
-    empty_node = 0
+    operator_node = 4
 };
 
 struct tree_node {
@@ -35,4 +38,44 @@ struct tree_node {
     ~tree_node() = default;
 };
 
+struct variable {
+    char name[MAX_NAME_SIZE];
+    double value;
+};
+
+class expression_tree {
+public:
+    AutoFree<tree_node> tree_nodes;
+    AutoFree<variable> variables;
+    int variables_count;
+    int nodes_count;
+
+    expression_tree(const expression_tree&) =  delete;
+    void operator=(const expression_tree&) = delete;
+    bool read_tree(const char* input_file) {
+        int tree_size = read_bin<char> (&tree, input_file);
+        variables_count = *(reinterpret_cast<int*> (tree.ptr));
+        nodes_count = *(reinterpret_cast<int*> (tree.ptr + 4 + variables_count*sizeof(variable)));
+        variables.ptr = (reinterpret_cast<variable*> (tree.ptr + 4));
+        tree_nodes.ptr = (reinterpret_cast<tree_node*> (tree.ptr + 4 + variables_count*sizeof(variable) + 4));
+        return 0;
+    }
+
+    expression_tree(){
+        tree.ptr = NULL;
+        tree_nodes.ptr = NULL;
+        variables.ptr = NULL;
+        variables_count = 0;
+        nodes_count = 0;
+    }
+
+    ~expression_tree(){
+        tree_nodes.ptr = NULL;
+        variables.ptr = NULL;
+    }
+private:
+    AutoFree<char> tree;
+};
+
+#define DIFFERENTIATOR_NODE_STRUCTURE_H
 #endif //DIFFERENTIATOR_NODE_STRUCTURE_H

@@ -3,7 +3,6 @@
 //
 
 #ifndef DIFFERENTIATOR_EXPRESSION_PARSER_H
-#define DIFFERENTIATOR_EXPRESSION_PARSER_H
 
 #include "info.h"
 #include "node_structure.h"
@@ -40,10 +39,9 @@ int read_int (const char* start, int& value) {
 int read_double (const char* start,
                  my_stack<tree_node>& tree,
                  int start_pos) {
-    double value;
+    double value = 0;
     int pos = 0;
     while (start[pos] == ' ') pos++;
-    value = 0;
     int mul = 1;
     if (start[0] == '-') {
         pos = 1;
@@ -77,37 +75,41 @@ int read_double (const char* start,
 int read_unit(const char* start,
               operators_definitions& op_defs,
               functions_definitions& func_defs,
-              double* variables,
               bor& variables_bor,
+              char** variables_names,
               my_stack<tree_node>& tree,
               int start_pos);
 
 int read_simple_expression(const char* start,
                            operators_definitions& op_defs,
                            functions_definitions& func_defs,
-                           double* variables,
                            bor& variables_bor,
+                           char** variables_names,
                            my_stack<tree_node>& tree,
                            int start_pos) {
+    tree.size();
+    //printf("expr%d\n", start);
     int pos = 0;
     double first = 0, second = 0;
-    int first_node = tree.size();
-    tree.push_back(tree_node());
+    int first_node = start_pos;
     int f_l = read_unit(
             start + pos,
             op_defs, func_defs,
-            variables,
             variables_bor,
+            variables_names,
             tree,
             first_node
             );
     if (f_l == -1) return -1;
-
+    //printf("expr1 %d %d %c\n", start, f_l, start[f_l]);
+    //printf("%d\n", tree.size());
     int ans = op_defs.operators_bor.check_max(start + f_l);
     if (ans == -1) {
-        tree.get_ptr()[start_pos] = tree_node(empty_node, 0, first_node, -1, 0);
         return f_l;
     }
+    //printf("expr2%d\n", start);
+    first_node = tree.size();
+    tree.push_back(tree.get_ptr()[start_pos]);
     int op_l = strlen(op_defs.operators_names[ans]);
 
     int second_node = tree.size();
@@ -116,27 +118,34 @@ int read_simple_expression(const char* start,
             start + pos + op_l + f_l,
             op_defs,
             func_defs,
-            variables,
             variables_bor,
+            variables_names,
             tree,
             second_node
             );
+    //printf("expr3%d\n", start);
+    //printf("%d\n", tree.size());
     if (s_l == -1) return -1;
     tree.get_ptr()[start_pos] = tree_node(operator_node, ans, first_node, second_node, 0);
+    //printf("%d\n", tree.size());
     return f_l + s_l + op_l;
 }
 
 int read_func(const char* start,
               operators_definitions& op_defs,
               functions_definitions& func_defs,
-              double* variables,
               bor& variables_bor,
+              char** variables_names,
               my_stack<tree_node>& tree,
               int start_pos) {
+    //printf("func%d\n", start);
     int pos = 0;
     while (start[pos] == ' ') pos++;
     int cur_func = func_defs.functions_bor.check_max(start + pos);
-    if (cur_func == -1) return -1;
+    if (cur_func == -1) {
+        //printf("fffunc%d\n", start);
+        return -1;
+    }
 
     pos += strlen(func_defs.functions_names[cur_func]);
     while (start[pos] == ' ') pos++;
@@ -148,16 +157,21 @@ int read_func(const char* start,
             start + pos,
             op_defs,
             func_defs,
-            variables,
             variables_bor,
+            variables_names,
             tree,
             link
             );
-    if (exprlen == -1) return -1;
+    if (exprlen == -1) {
+        //printf("-func%d\n", start);
+        return -1;
+    }
     pos += exprlen;
+    //printf("2func%d\n", start);
     while (start[pos] == ' ') pos++;
     if (start[pos] != ')') return -1;
     pos++;
+    while (start[pos] == ' ') pos++;
     tree.get_ptr()[start_pos] = tree_node(function_node, cur_func, link, -1, 0);
     return pos;
 }
@@ -165,10 +179,12 @@ int read_func(const char* start,
 int read_var(const char* start,
              operators_definitions& op_defs,
              functions_definitions& func_defs,
-             double* variables,
              bor& variables_bor,
-             int& var_index) {
+             char** variables_names,
+             my_stack<tree_node>& tree,
+             int start_pos) {
     int pos = 0;
+    //printf("var%d\n", start);
     while (start[pos] == ' ') pos++;
     if (start[pos] < 'a' || start[pos] > 'z') return -1;
     int length = 0;
@@ -177,54 +193,81 @@ int read_var(const char* start,
         length++;
     }
     if (length > 99) return -1;
-    char str[100];
+    char str[MAX_NAME_SIZE];
     strncpy(str, start + pos, length);
     str[length] = '\0';
     int ans = variables_bor.check(str);
     if (ans == -1) {
-        int new_var = variables_bor.get_size();
-        variables_bor.add(str, -2 - new_var);
-        ans = -2 - new_var;
+        ans = variables_bor.get_size();
+        variables_bor.add(str, ans);
+        strcpy(variables_names[ans], str);
     }
-    var_index = ans;
+    tree.get_ptr()[start_pos] = tree_node(variable_node, ans, -1, -1, 0);
     pos += length;
     while (start[pos] == ' ')
         pos++;
+    //printf("2var%d\n", start);
+    tree.size();
     return pos;
 }
 
 int read_unit(const char* start,
               operators_definitions& op_defs,
               functions_definitions& func_defs,
-              double* variables,
               bor& variables_bor,
+              char** variables_names,
               my_stack<tree_node>& tree,
               int start_pos) {
+    tree.size();
+    //printf("unit%d\n", start);
     int pos = 0;
     while (start[pos] == ' ') pos++;
     if (start[pos] == '(') {
         pos++;
-        int readed = read_simple_expression(start + pos, op_defs, func_defs, variables, variables_bor, tree, start_pos);
+        int readed = read_simple_expression(
+                start + pos,
+                op_defs,
+                func_defs,
+                variables_bor,
+                variables_names,
+                tree,
+                start_pos);
         if (readed == -1) return -1;
         pos += readed;
         while (start[pos] == ' ') pos++;
         if (start[pos] != ')') return -1;
         pos++;
         while (start[pos] == ' ') pos++;
+        //printf("%d\n", tree.size());
         return pos;
     }
-    else if (start[pos] >= '0' && start[pos] <= '9'){
+    else if ((start[pos] >= '0' && start[pos] <= '9') || start[pos] == '-'){
         return read_double(start, tree, start_pos);
     }
     else {
         double val = 0;
-        int func_len = read_func(start, op_defs, func_defs, variables, variables_bor, tree, start_pos);
+        int func_len = read_func(
+                start,
+                op_defs,
+                func_defs,
+                variables_bor,
+                variables_names,
+                tree,
+                start_pos);
         if (func_len == -1) {
             int var_index;
-            func_len = read_var(start, op_defs, func_defs, variables, variables_bor, var_index);
-            tree.get_ptr()[start_pos] = tree_node(empty_node, 0, var_index, -1, 0);
+            func_len = read_var(
+                    start,
+                    op_defs,
+                    func_defs,
+                    variables_bor,
+                    variables_names,
+                    tree,
+                    start_pos);
         }
         return func_len;
     }
 }
+#define DIFFERENTIATOR_EXPRESSION_PARSER_H
+
 #endif //DIFFERENTIATOR_EXPRESSION_PARSER_H

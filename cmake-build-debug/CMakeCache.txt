@@ -150,7 +150,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=differentiator
+CMAKE_PROJECT_NAME:STATIC=print_tree
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -222,6 +222,24 @@ differentiator_BINARY_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentia
 
 //Value Computed by CMake
 differentiator_SOURCE_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentiator
+
+//Value Computed by CMake
+my_disassembler_BINARY_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentiator/cmake-build-debug
+
+//Value Computed by CMake
+my_disassembler_SOURCE_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentiator
+
+//Value Computed by CMake
+print_tree_BINARY_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentiator/cmake-build-debug
+
+//Value Computed by CMake
+print_tree_SOURCE_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentiator
+
+//Value Computed by CMake
+read_expr_BINARY_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentiator/cmake-build-debug
+
+//Value Computed by CMake
+read_expr_SOURCE_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentiator
 
 
 ########################

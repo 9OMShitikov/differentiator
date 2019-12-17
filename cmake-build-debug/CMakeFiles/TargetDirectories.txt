@@ -1,3 +1,4 @@
 /home/oleg/Public/Oleg/course_2/ded/differentiator/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/oleg/Public/Oleg/course_2/ded/differentiator/cmake-build-debug/CMakeFiles/differentiator.dir
 /home/oleg/Public/Oleg/course_2/ded/differentiator/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/oleg/Public/Oleg/course_2/ded/differentiator/cmake-build-debug/CMakeFiles/read_expr.dir
+/home/oleg/Public/Oleg/course_2/ded/differentiator/cmake-build-debug/CMakeFiles/print_tree.dir

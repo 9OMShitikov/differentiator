@@ -1,0 +1,12 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/oleg/Public/Oleg/course_2/ded/differentiator/main_files/print_tree.cpp
+print_tree.h
+/home/oleg/Public/Oleg/course_2/ded/differentiator/main_files/print_tree.h
+
