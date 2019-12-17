@@ -159,17 +159,76 @@ int dfs_differentiate (expression_tree& tree,
             printf("%d %d\n", node.index, cur_new_tree_node);
             ASSERT(node.index >= 0);
             if (node.index == diff_var) {
-                new_tree.get_ptr()[cur_new_tree_node] = tree_node(constant_node, -1, -1, -1, 1);
+                new_tree.get_ptr()[cur_new_tree_node] = tree_node(1);
                 printf("#%d\n", node.index);
             }
             else
-                new_tree.get_ptr()[cur_new_tree_node] = tree_node(constant_node, -1, -1, -1, 0);
+                new_tree.get_ptr()[cur_new_tree_node] = tree_node(0);
         }
             break;
         case constant_node: {
-            new_tree.get_ptr()[cur_new_tree_node] = tree_node(constant_node, -1, -1, -1, 0);
+            new_tree.get_ptr()[cur_new_tree_node] = tree_node( 0);
         }
             break;
+    }
+    return 0;
+}
+
+int dfs_simplify (expression_tree& tree,
+                       my_stack<tree_node>& new_tree,
+                       int cur_tree_node,
+                       int cur_new_tree_node,
+                       operators_definitions & op_defs,
+                       functions_definitions & func_defs) {
+    ASSERT(cur_tree_node >= 0);
+    ASSERT(cur_new_tree_node >= 0);
+    tree_node node = tree.tree_nodes.ptr[cur_tree_node];
+    int last_size = new_tree.size();
+
+    switch (node.type) {
+        case function_node: {
+            ASSERT(node.index >= 0);
+            ASSERT(node.first_link >= 0);
+            ASSERT(node.second_link == -1);
+            if (tree.tree_nodes.ptr[node.first_link].type == constant_node) {
+                new_tree.get_ptr()[cur_new_tree_node] = tree_node(
+                        func_defs.compute(functions(node.index), tree.tree_nodes.ptr[node.first_link].value));
+            }
+            else{
+                new_tree.get_ptr()[cur_new_tree_node] = node;
+                new_tree.get_ptr()[cur_new_tree_node].first_link = new_tree.size();
+                new_tree.push_back(tree_node());
+                dfs_simplify(tree, new_tree, node.first_link, new_tree.size() - 1, op_defs, func_defs);
+            }
+        }
+            break;
+        case operator_node: {
+            bool fl = 0;
+            if (tree.tree_nodes.ptr[node.first_link].type == constant_node)
+            {
+                if (tree.tree_nodes.ptr[node.second_link].type == constant_node)
+                {new_tree.get_ptr()[cur_new_tree_node] = tree_node(
+                            op_defs.compute(operators(node.index),
+                                    tree.tree_nodes.ptr[node.first_link].value,
+                                    tree.tree_nodes.ptr[node.second_link].value));
+                fl = 1;
+                }
+            }
+            else if (tree.tree_nodes.ptr[node.second_link].type == constant_node) {}
+            if (!fl) {
+                new_tree.get_ptr()[cur_new_tree_node] = node;
+                new_tree.get_ptr()[cur_new_tree_node].first_link = new_tree.size();
+                new_tree.push_back(tree_node());
+                dfs_simplify(tree, new_tree, node.first_link, new_tree.size() - 1, op_defs, func_defs);
+                new_tree.get_ptr()[cur_new_tree_node].second_link = new_tree.size();
+                new_tree.push_back(tree_node());
+                dfs_simplify(tree, new_tree, node.second_link, new_tree.size() - 1, op_defs, func_defs);
+            }
+        }
+            break;
+        default: {
+            new_tree.get_ptr()[cur_new_tree_node] = node;
+        }
     }
     return 0;
 }

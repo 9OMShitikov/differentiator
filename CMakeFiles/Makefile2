@@ -53,18 +53,20 @@ CMAKE_BINARY_DIR = /home/oleg/Public/Oleg/course_2/ded/differentiator
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/print_tree.dir/all
-all: CMakeFiles/differentiate_tree.dir/all
-all: CMakeFiles/read_expression.dir/all
 all: CMakeFiles/count_expression.dir/all
+all: CMakeFiles/read_expression.dir/all
+all: CMakeFiles/differentiate_tree.dir/all
+all: CMakeFiles/print_tree.dir/all
+all: CMakeFiles/simplify_tree.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
-clean: CMakeFiles/print_tree.dir/clean
-clean: CMakeFiles/differentiate_tree.dir/clean
-clean: CMakeFiles/read_expression.dir/clean
 clean: CMakeFiles/count_expression.dir/clean
+clean: CMakeFiles/read_expression.dir/clean
+clean: CMakeFiles/differentiate_tree.dir/clean
+clean: CMakeFiles/print_tree.dir/clean
+clean: CMakeFiles/simplify_tree.dir/clean
 
 .PHONY : clean
 
@@ -74,58 +76,31 @@ preinstall:
 .PHONY : preinstall
 
 #=============================================================================
-# Target rules for target CMakeFiles/print_tree.dir
+# Target rules for target CMakeFiles/count_expression.dir
 
 # All Build rule for target.
-CMakeFiles/print_tree.dir/all:
-	$(MAKE) -f CMakeFiles/print_tree.dir/build.make CMakeFiles/print_tree.dir/depend
-	$(MAKE) -f CMakeFiles/print_tree.dir/build.make CMakeFiles/print_tree.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=5,6 "Built target print_tree"
-.PHONY : CMakeFiles/print_tree.dir/all
+CMakeFiles/count_expression.dir/all:
+	$(MAKE) -f CMakeFiles/count_expression.dir/build.make CMakeFiles/count_expression.dir/depend
+	$(MAKE) -f CMakeFiles/count_expression.dir/build.make CMakeFiles/count_expression.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=1,2 "Built target count_expression"
+.PHONY : CMakeFiles/count_expression.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/print_tree.dir/rule: cmake_check_build_system
+CMakeFiles/count_expression.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/print_tree.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/count_expression.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles 0
-.PHONY : CMakeFiles/print_tree.dir/rule
+.PHONY : CMakeFiles/count_expression.dir/rule
 
 # Convenience name for target.
-print_tree: CMakeFiles/print_tree.dir/rule
+count_expression: CMakeFiles/count_expression.dir/rule
 
-.PHONY : print_tree
-
-# clean rule for target.
-CMakeFiles/print_tree.dir/clean:
-	$(MAKE) -f CMakeFiles/print_tree.dir/build.make CMakeFiles/print_tree.dir/clean
-.PHONY : CMakeFiles/print_tree.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/differentiate_tree.dir
-
-# All Build rule for target.
-CMakeFiles/differentiate_tree.dir/all:
-	$(MAKE) -f CMakeFiles/differentiate_tree.dir/build.make CMakeFiles/differentiate_tree.dir/depend
-	$(MAKE) -f CMakeFiles/differentiate_tree.dir/build.make CMakeFiles/differentiate_tree.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=3,4 "Built target differentiate_tree"
-.PHONY : CMakeFiles/differentiate_tree.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/differentiate_tree.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/differentiate_tree.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles 0
-.PHONY : CMakeFiles/differentiate_tree.dir/rule
-
-# Convenience name for target.
-differentiate_tree: CMakeFiles/differentiate_tree.dir/rule
-
-.PHONY : differentiate_tree
+.PHONY : count_expression
 
 # clean rule for target.
-CMakeFiles/differentiate_tree.dir/clean:
-	$(MAKE) -f CMakeFiles/differentiate_tree.dir/build.make CMakeFiles/differentiate_tree.dir/clean
-.PHONY : CMakeFiles/differentiate_tree.dir/clean
+CMakeFiles/count_expression.dir/clean:
+	$(MAKE) -f CMakeFiles/count_expression.dir/build.make CMakeFiles/count_expression.dir/clean
+.PHONY : CMakeFiles/count_expression.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/read_expression.dir
@@ -155,31 +130,85 @@ CMakeFiles/read_expression.dir/clean:
 .PHONY : CMakeFiles/read_expression.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/count_expression.dir
+# Target rules for target CMakeFiles/differentiate_tree.dir
 
 # All Build rule for target.
-CMakeFiles/count_expression.dir/all:
-	$(MAKE) -f CMakeFiles/count_expression.dir/build.make CMakeFiles/count_expression.dir/depend
-	$(MAKE) -f CMakeFiles/count_expression.dir/build.make CMakeFiles/count_expression.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=1,2 "Built target count_expression"
-.PHONY : CMakeFiles/count_expression.dir/all
+CMakeFiles/differentiate_tree.dir/all:
+	$(MAKE) -f CMakeFiles/differentiate_tree.dir/build.make CMakeFiles/differentiate_tree.dir/depend
+	$(MAKE) -f CMakeFiles/differentiate_tree.dir/build.make CMakeFiles/differentiate_tree.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=3,4 "Built target differentiate_tree"
+.PHONY : CMakeFiles/differentiate_tree.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/count_expression.dir/rule: cmake_check_build_system
+CMakeFiles/differentiate_tree.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/count_expression.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/differentiate_tree.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles 0
-.PHONY : CMakeFiles/count_expression.dir/rule
+.PHONY : CMakeFiles/differentiate_tree.dir/rule
 
 # Convenience name for target.
-count_expression: CMakeFiles/count_expression.dir/rule
+differentiate_tree: CMakeFiles/differentiate_tree.dir/rule
 
-.PHONY : count_expression
+.PHONY : differentiate_tree
 
 # clean rule for target.
-CMakeFiles/count_expression.dir/clean:
-	$(MAKE) -f CMakeFiles/count_expression.dir/build.make CMakeFiles/count_expression.dir/clean
-.PHONY : CMakeFiles/count_expression.dir/clean
+CMakeFiles/differentiate_tree.dir/clean:
+	$(MAKE) -f CMakeFiles/differentiate_tree.dir/build.make CMakeFiles/differentiate_tree.dir/clean
+.PHONY : CMakeFiles/differentiate_tree.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/print_tree.dir
+
+# All Build rule for target.
+CMakeFiles/print_tree.dir/all:
+	$(MAKE) -f CMakeFiles/print_tree.dir/build.make CMakeFiles/print_tree.dir/depend
+	$(MAKE) -f CMakeFiles/print_tree.dir/build.make CMakeFiles/print_tree.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=5,6 "Built target print_tree"
+.PHONY : CMakeFiles/print_tree.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/print_tree.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/print_tree.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles 0
+.PHONY : CMakeFiles/print_tree.dir/rule
+
+# Convenience name for target.
+print_tree: CMakeFiles/print_tree.dir/rule
+
+.PHONY : print_tree
+
+# clean rule for target.
+CMakeFiles/print_tree.dir/clean:
+	$(MAKE) -f CMakeFiles/print_tree.dir/build.make CMakeFiles/print_tree.dir/clean
+.PHONY : CMakeFiles/print_tree.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/simplify_tree.dir
+
+# All Build rule for target.
+CMakeFiles/simplify_tree.dir/all:
+	$(MAKE) -f CMakeFiles/simplify_tree.dir/build.make CMakeFiles/simplify_tree.dir/depend
+	$(MAKE) -f CMakeFiles/simplify_tree.dir/build.make CMakeFiles/simplify_tree.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=9,10 "Built target simplify_tree"
+.PHONY : CMakeFiles/simplify_tree.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/simplify_tree.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/simplify_tree.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles 0
+.PHONY : CMakeFiles/simplify_tree.dir/rule
+
+# Convenience name for target.
+simplify_tree: CMakeFiles/simplify_tree.dir/rule
+
+.PHONY : simplify_tree
+
+# clean rule for target.
+CMakeFiles/simplify_tree.dir/clean:
+	$(MAKE) -f CMakeFiles/simplify_tree.dir/build.make CMakeFiles/simplify_tree.dir/clean
+.PHONY : CMakeFiles/simplify_tree.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

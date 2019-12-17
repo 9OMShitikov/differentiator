@@ -111,30 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named print_tree
+# Target rules for targets named count_expression
 
 # Build rule for target.
-print_tree: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 print_tree
-.PHONY : print_tree
+count_expression: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 count_expression
+.PHONY : count_expression
 
 # fast build rule for target.
-print_tree/fast:
-	$(MAKE) -f CMakeFiles/print_tree.dir/build.make CMakeFiles/print_tree.dir/build
-.PHONY : print_tree/fast
-
-#=============================================================================
-# Target rules for targets named differentiate_tree
-
-# Build rule for target.
-differentiate_tree: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 differentiate_tree
-.PHONY : differentiate_tree
-
-# fast build rule for target.
-differentiate_tree/fast:
-	$(MAKE) -f CMakeFiles/differentiate_tree.dir/build.make CMakeFiles/differentiate_tree.dir/build
-.PHONY : differentiate_tree/fast
+count_expression/fast:
+	$(MAKE) -f CMakeFiles/count_expression.dir/build.make CMakeFiles/count_expression.dir/build
+.PHONY : count_expression/fast
 
 #=============================================================================
 # Target rules for targets named read_expression
@@ -150,17 +137,43 @@ read_expression/fast:
 .PHONY : read_expression/fast
 
 #=============================================================================
-# Target rules for targets named count_expression
+# Target rules for targets named differentiate_tree
 
 # Build rule for target.
-count_expression: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 count_expression
-.PHONY : count_expression
+differentiate_tree: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 differentiate_tree
+.PHONY : differentiate_tree
 
 # fast build rule for target.
-count_expression/fast:
-	$(MAKE) -f CMakeFiles/count_expression.dir/build.make CMakeFiles/count_expression.dir/build
-.PHONY : count_expression/fast
+differentiate_tree/fast:
+	$(MAKE) -f CMakeFiles/differentiate_tree.dir/build.make CMakeFiles/differentiate_tree.dir/build
+.PHONY : differentiate_tree/fast
+
+#=============================================================================
+# Target rules for targets named print_tree
+
+# Build rule for target.
+print_tree: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 print_tree
+.PHONY : print_tree
+
+# fast build rule for target.
+print_tree/fast:
+	$(MAKE) -f CMakeFiles/print_tree.dir/build.make CMakeFiles/print_tree.dir/build
+.PHONY : print_tree/fast
+
+#=============================================================================
+# Target rules for targets named simplify_tree
+
+# Build rule for target.
+simplify_tree: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simplify_tree
+.PHONY : simplify_tree
+
+# fast build rule for target.
+simplify_tree/fast:
+	$(MAKE) -f CMakeFiles/simplify_tree.dir/build.make CMakeFiles/simplify_tree.dir/build
+.PHONY : simplify_tree/fast
 
 main_files/count_tree.o: main_files/count_tree.cpp.o
 
@@ -270,6 +283,33 @@ main_files/reader.cpp.s:
 	$(MAKE) -f CMakeFiles/read_expression.dir/build.make CMakeFiles/read_expression.dir/main_files/reader.cpp.s
 .PHONY : main_files/reader.cpp.s
 
+main_files/simplifier.o: main_files/simplifier.cpp.o
+
+.PHONY : main_files/simplifier.o
+
+# target to build an object file
+main_files/simplifier.cpp.o:
+	$(MAKE) -f CMakeFiles/simplify_tree.dir/build.make CMakeFiles/simplify_tree.dir/main_files/simplifier.cpp.o
+.PHONY : main_files/simplifier.cpp.o
+
+main_files/simplifier.i: main_files/simplifier.cpp.i
+
+.PHONY : main_files/simplifier.i
+
+# target to preprocess a source file
+main_files/simplifier.cpp.i:
+	$(MAKE) -f CMakeFiles/simplify_tree.dir/build.make CMakeFiles/simplify_tree.dir/main_files/simplifier.cpp.i
+.PHONY : main_files/simplifier.cpp.i
+
+main_files/simplifier.s: main_files/simplifier.cpp.s
+
+.PHONY : main_files/simplifier.s
+
+# target to generate assembly for a file
+main_files/simplifier.cpp.s:
+	$(MAKE) -f CMakeFiles/simplify_tree.dir/build.make CMakeFiles/simplify_tree.dir/main_files/simplifier.cpp.s
+.PHONY : main_files/simplifier.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -277,11 +317,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... print_tree"
-	@echo "... edit_cache"
-	@echo "... differentiate_tree"
-	@echo "... read_expression"
 	@echo "... count_expression"
+	@echo "... read_expression"
+	@echo "... differentiate_tree"
+	@echo "... edit_cache"
+	@echo "... print_tree"
+	@echo "... simplify_tree"
 	@echo "... main_files/count_tree.o"
 	@echo "... main_files/count_tree.i"
 	@echo "... main_files/count_tree.s"
@@ -294,6 +335,9 @@ help:
 	@echo "... main_files/reader.o"
 	@echo "... main_files/reader.i"
 	@echo "... main_files/reader.s"
+	@echo "... main_files/simplifier.o"
+	@echo "... main_files/simplifier.i"
+	@echo "... main_files/simplifier.s"
 .PHONY : help
 
 

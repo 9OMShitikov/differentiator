@@ -45,8 +45,9 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/print_tree.dir/DependInfo.cmake"
-  "CMakeFiles/differentiate_tree.dir/DependInfo.cmake"
-  "CMakeFiles/read_expression.dir/DependInfo.cmake"
   "CMakeFiles/count_expression.dir/DependInfo.cmake"
+  "CMakeFiles/read_expression.dir/DependInfo.cmake"
+  "CMakeFiles/differentiate_tree.dir/DependInfo.cmake"
+  "CMakeFiles/print_tree.dir/DependInfo.cmake"
+  "CMakeFiles/simplify_tree.dir/DependInfo.cmake"
   )

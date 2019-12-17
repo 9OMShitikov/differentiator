@@ -35,6 +35,13 @@ struct tree_node {
             second_link(second_link_),
             value(value_) {
     }
+    tree_node(double value_):
+            type(constant_node),
+            index(-1),
+            first_link(-1),
+            second_link(-1),
+            value(value_) {
+    }
     ~tree_node() = default;
 };
 

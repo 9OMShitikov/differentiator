@@ -136,7 +136,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=differentiate_tree
+CMAKE_PROJECT_NAME:STATIC=simplify_tree
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -216,6 +216,12 @@ read_expression_BINARY_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differenti
 
 //Value Computed by CMake
 read_expression_SOURCE_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentiator
+
+//Value Computed by CMake
+simplify_tree_BINARY_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentiator
+
+//Value Computed by CMake
+simplify_tree_SOURCE_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentiator
 
 
 ########################

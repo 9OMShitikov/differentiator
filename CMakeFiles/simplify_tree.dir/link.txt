@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/simplify_tree.dir/main_files/simplifier.cpp.o  -o simplify_tree 
