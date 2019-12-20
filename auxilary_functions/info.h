@@ -8,12 +8,14 @@ enum operators {
     SUM,
     SUB,
     MUL,
-    DIV
+    DIV,
+    POW,
+    POW1
 };
 
 class operators_definitions {
 public:
-    const static int operators_count = 4;
+    const static int operators_count = 6;
     char operators_names [operators_count] [10];
     char operators_differentials [operators_count] [128];
     bor operators_bor;
@@ -34,6 +36,14 @@ public:
         strcpy(operators_names[DIV], "/");
         strcpy(operators_differentials[DIV], "((x2*dx1) - (x1*dx2))/(x2*x2)");
         operators_bor.add("/", DIV);
+
+        strcpy(operators_names[POW], "^");
+        strcpy(operators_differentials[POW], "(x2*(x1^(x2-1))) * dx1");
+        operators_bor.add("^", POW);
+
+        strcpy(operators_names[POW1], "@");
+        strcpy(operators_differentials[POW1], "(x1^x2) * (((x2 / x1) * dx1) + (ln(x1) * dx2))");
+        operators_bor.add("@", POW1);
     }
 
     double compute(operators op, double x1, double x2) {
@@ -42,6 +52,7 @@ public:
             case SUB: return x1 - x2;
             case MUL: return x1 * x2;
             case DIV: return x1 / x2;
+            case POW: return pow(x1, x2);
         }
     }
 };
@@ -51,11 +62,13 @@ enum functions {
     COS,
     TAN,
     SQRT,
+    LN,
+    EXP
 };
 
 class functions_definitions {
 public:
-    const static int functions_count = 4;
+    const static int functions_count = 7;
     char functions_names [functions_count] [10];
     char function_differentials [functions_count] [128];
     bor functions_bor;
@@ -76,6 +89,14 @@ public:
         strcpy(functions_names[SQRT], "sqrt");
         strcpy(function_differentials[SQRT], "(1 / (2 * sqrt(x))) * dx");
         functions_bor.add("sqrt", SQRT);
+
+        strcpy(functions_names[LN], "ln");
+        strcpy(function_differentials[LN], "(1/x) * dx");
+        functions_bor.add("ln", LN);
+
+        strcpy(functions_names[EXP], "exp");
+        strcpy(function_differentials[EXP], "x * dx");
+        functions_bor.add("exp", EXP);
     }
 
     double compute(functions op, double arg) {
@@ -84,6 +105,8 @@ public:
             case COS: return cos(arg);
             case TAN: return tan(arg);
             case SQRT: return sqrt(arg);
+            case LN: return log(arg);
+            case EXP: return exp(arg);
         }
     }
 };

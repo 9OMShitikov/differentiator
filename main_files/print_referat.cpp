@@ -33,12 +33,19 @@ int main(int args, char* argv[]) {
 \\usepackage[utf8]{inputenc}\n\
 \\usepackage{amssymb,amsmath,amsthm}\n\
 \\begin{document}\n\
-\\par It's obvious that for \\[F = ");
+\\par It's obvious that for \\[F(");
 
+    AutoFree<char> expr_buff;
     expression_tree my_tree;
     read_tree(buff, my_tree, expr_size);
 
-    AutoFree<char> expr_buff;
+    for (int i = 0; i < my_tree.variables_count; ++i) {
+        add_string_to_buff(&str_buff.ptr, buff_size, buff_taken, my_tree.variables.ptr[i].name);
+        if (i < my_tree.variables_count - 1) {
+            add_string_to_buff(&str_buff.ptr, buff_size, buff_taken, ",");
+        }
+    }
+    add_string_to_buff(&str_buff.ptr, buff_size, buff_taken,") = ");
 
     print_latex_tree(expr_buff, my_tree);
 

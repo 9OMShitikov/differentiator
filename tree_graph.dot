@@ -1,0 +1,27 @@
+digraph expression_tree {
+v0 [label = "+", style = filled, color = aliceblue]
+v1 [label = "^", style = filled, color = aliceblue]
+v2 [label = "x", style = filled, color = chartreuse]
+v3 [label = "2.000000", style = filled, color = coral1]
+v4 [label = "sin", style = filled, color = antiquewhite]
+v5 [label = "^", style = filled, color = aliceblue]
+v6 [label = "*", style = filled, color = aliceblue]
+v7 [label = "x", style = filled, color = chartreuse]
+v8 [label = "3.000000", style = filled, color = coral1]
+v9 [label = "cos", style = filled, color = antiquewhite]
+v10 [label = "4.000000", style = filled, color = coral1]
+v0->v4
+v0->v5
+{rank = same; v4, v5}
+v1->v2
+v1->v3
+{rank = same; v2, v3}
+v4->v1
+v5->v9
+v5->v10
+{rank = same; v9, v10}
+v6->v7
+v6->v8
+{rank = same; v7, v8}
+v9->v6
+}

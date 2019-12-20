@@ -55,6 +55,28 @@ int dfs_count (expression_tree& tree, int cur_node, double& value, operators_def
     return 0;
 }
 
+int dfs_find (expression_tree& tree,
+        int cur_node,
+        operators_definitions & op_defs,
+        functions_definitions & func_defs,
+        int k) {
+    ASSERT(cur_node >= 0);
+    tree_node node = tree.tree_nodes.ptr[cur_node];
+    int result = 0;
+    if (node.type == variable_node)
+        if (node.index == k)
+            return 1;
+    if (node.first_link != -1) {
+        if (dfs_find(tree, node.first_link, op_defs, func_defs, k))
+            result = 1;
+    }
+    if (node.second_link != -1) {
+        if (dfs_find(tree, node.second_link, op_defs, func_defs, k))
+            result = 1;
+    }
+    return result;
+}
+
 int dfs_copy (expression_tree& tree,
               my_stack<tree_node>& new_tree,
               int cur_tree_node,
@@ -75,6 +97,7 @@ int dfs_copy (expression_tree& tree,
     }
     return 0;
 }
+
 
 int dfs_differentiate (expression_tree& tree,
         my_stack<tree_node>& new_tree,
@@ -116,7 +139,10 @@ int dfs_differentiate (expression_tree& tree,
                         }
                         break;
                         case dx: {
-                            dfs_differentiate(tree, new_tree, node.first_link, i, op_defs, func_defs, diff_var);
+                            if (!dfs_find(tree, node.first_link, op_defs, func_defs, diff_var)) {
+                                new_tree.get_ptr()[i] = tree_node( 0);
+                            }
+                            else dfs_differentiate(tree, new_tree, node.first_link, i, op_defs, func_defs, diff_var);
                         }
                         break;
                     }
@@ -135,6 +161,11 @@ int dfs_differentiate (expression_tree& tree,
             cur_bor.add("x2", x2);
             cur_bor.add("dx2", dx2);
             char** temp = NULL;
+            if (node.index == POW) {
+                if (dfs_find(tree, node.second_link, op_defs, func_defs, diff_var)) {
+                    node.index = POW1;
+                }
+            }
             int res = read_simple_expression(op_defs.operators_differentials[node.index],
                                              op_defs,
                                              func_defs,
@@ -151,8 +182,11 @@ int dfs_differentiate (expression_tree& tree,
                         }
                         break;
                         case dx1: {
+                            if (!dfs_find(tree, node.first_link, op_defs, func_defs, diff_var)) {
+                                new_tree.get_ptr()[i] = tree_node( 0);
+                            }
                             //printf("$%d\n", i);
-                            dfs_differentiate(tree, new_tree, node.first_link, i, op_defs, func_defs, diff_var);
+                            else dfs_differentiate(tree, new_tree, node.first_link, i, op_defs, func_defs, diff_var);
                         }
                         break;
                         case x2: {
@@ -161,7 +195,10 @@ int dfs_differentiate (expression_tree& tree,
                         }
                         break;
                         case dx2: {
-                            dfs_differentiate(tree, new_tree, node.second_link, i, op_defs, func_defs, diff_var);
+                            if (!dfs_find(tree, node.second_link, op_defs, func_defs, diff_var)) {
+                                new_tree.get_ptr()[i] = tree_node( 0);
+                            }
+                            else dfs_differentiate(tree, new_tree, node.second_link, i, op_defs, func_defs, diff_var);
                         }
                         break;
                     }
