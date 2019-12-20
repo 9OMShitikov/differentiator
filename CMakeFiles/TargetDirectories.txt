@@ -1,7 +1,8 @@
 /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles/rebuild_cache.dir
+/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles/edit_cache.dir
 /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles/count_expression.dir
 /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles/read_expression.dir
-/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles/differentiate_tree.dir
-/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles/edit_cache.dir
 /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles/print_tree.dir
+/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles/differentiate_tree.dir
+/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles/print_tree_latex.dir
 /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles/simplify_tree.dir

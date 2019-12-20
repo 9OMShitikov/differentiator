@@ -1,7 +1,5 @@
-//
-// Created by oleg on 25.10.2019.
-//
-
+#ifndef DIFFERENTIATOR_BOR_H
+#include "strings_read_functions.h"
 class bor {
 public:
     bor() {
@@ -80,3 +78,6 @@ private:
     int size;
     bor_node* zero_node;
 };
+#define DIFFERENTIATOR_BOR_H
+
+#endif //DIFFERENTIATOR_BOR_H

@@ -1,0 +1,1 @@
+ \frac {\left(2.000000 \cdot x\right)} {\left(3.000000 - x\right)}

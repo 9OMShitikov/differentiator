@@ -43,7 +43,7 @@ struct tree_node {
             value(value_) {
     }
     ~tree_node() = default;
-    
+
 };
 
 struct variable {

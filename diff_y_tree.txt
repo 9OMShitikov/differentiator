@@ -1,127 +1,207 @@
 digraph expression_tree {
-v0 [label = "-", style = filled, color = aliceblue]
-v1 [label = "+", style = filled, color = aliceblue]
+v0 [label = "/", style = filled, color = aliceblue]
+v1 [label = "*", style = filled, color = aliceblue]
 v2 [label = "+", style = filled, color = aliceblue]
-v3 [label = "sin", style = filled, color = antiquewhite]
+v3 [label = "*", style = filled, color = aliceblue]
 v4 [label = "*", style = filled, color = aliceblue]
 v5 [label = "*", style = filled, color = aliceblue]
-v6 [label = "*", style = filled, color = aliceblue]
-v7 [label = "cos", style = filled, color = antiquewhite]
+v6 [label = "+", style = filled, color = aliceblue]
+v7 [label = "-", style = filled, color = aliceblue]
 v8 [label = "*", style = filled, color = aliceblue]
-v9 [label = "x", style = filled, color = chartreuse]
-v10 [label = "-1.000000", style = filled, color = coral1]
-v11 [label = "sin", style = filled, color = antiquewhite]
-v12 [label = "x", style = filled, color = chartreuse]
-v13 [label = "*", style = filled, color = aliceblue]
-v14 [label = "0.000000", style = filled, color = coral1]
-v15 [label = "x", style = filled, color = chartreuse]
-v16 [label = "x", style = filled, color = chartreuse]
-v17 [label = "cos", style = filled, color = antiquewhite]
-v18 [label = "0.000000", style = filled, color = coral1]
-v19 [label = "x", style = filled, color = chartreuse]
-v20 [label = "+", style = filled, color = aliceblue]
+v9 [label = "*", style = filled, color = aliceblue]
+v10 [label = "*", style = filled, color = aliceblue]
+v11 [label = "*", style = filled, color = aliceblue]
+v12 [label = "3.000000", style = filled, color = coral1]
+v13 [label = "cos", style = filled, color = antiquewhite]
+v14 [label = "*", style = filled, color = aliceblue]
+v15 [label = "2.000000", style = filled, color = coral1]
+v16 [label = "y", style = filled, color = chartreuse]
+v17 [label = "x", style = filled, color = chartreuse]
+v18 [label = "sin", style = filled, color = antiquewhite]
+v19 [label = "*", style = filled, color = aliceblue]
+v20 [label = "*", style = filled, color = aliceblue]
 v21 [label = "*", style = filled, color = aliceblue]
-v22 [label = "*", style = filled, color = aliceblue]
+v22 [label = "cos", style = filled, color = antiquewhite]
 v23 [label = "*", style = filled, color = aliceblue]
-v24 [label = "0.000000", style = filled, color = coral1]
-v25 [label = "cos", style = filled, color = antiquewhite]
-v26 [label = "0.000000", style = filled, color = coral1]
-v27 [label = "*", style = filled, color = aliceblue]
+v24 [label = "x", style = filled, color = chartreuse]
+v25 [label = "-1.000000", style = filled, color = coral1]
+v26 [label = "sin", style = filled, color = antiquewhite]
+v27 [label = "x", style = filled, color = chartreuse]
 v28 [label = "*", style = filled, color = aliceblue]
-v29 [label = "3.000000", style = filled, color = coral1]
-v30 [label = "*", style = filled, color = aliceblue]
-v31 [label = "*", style = filled, color = aliceblue]
-v32 [label = "2.000000", style = filled, color = coral1]
-v33 [label = "y", style = filled, color = chartreuse]
-v34 [label = "-1.000000", style = filled, color = coral1]
-v35 [label = "sin", style = filled, color = antiquewhite]
-v36 [label = "*", style = filled, color = aliceblue]
-v37 [label = "*", style = filled, color = aliceblue]
-v38 [label = "+", style = filled, color = aliceblue]
-v39 [label = "2.000000", style = filled, color = coral1]
-v40 [label = "y", style = filled, color = chartreuse]
-v41 [label = "y", style = filled, color = chartreuse]
-v42 [label = "0.000000", style = filled, color = coral1]
-v43 [label = "*", style = filled, color = aliceblue]
-v44 [label = "*", style = filled, color = aliceblue]
-v45 [label = "2.000000", style = filled, color = coral1]
-v46 [label = "1.000000", style = filled, color = coral1]
-v47 [label = "3.000000", style = filled, color = coral1]
-v48 [label = "cos", style = filled, color = antiquewhite]
+v29 [label = "0.000000", style = filled, color = coral1]
+v30 [label = "x", style = filled, color = chartreuse]
+v31 [label = "x", style = filled, color = chartreuse]
+v32 [label = "cos", style = filled, color = antiquewhite]
+v33 [label = "0.000000", style = filled, color = coral1]
+v34 [label = "cos", style = filled, color = antiquewhite]
+v35 [label = "x", style = filled, color = chartreuse]
+v36 [label = "sin", style = filled, color = antiquewhite]
+v37 [label = "x", style = filled, color = chartreuse]
+v38 [label = "x", style = filled, color = chartreuse]
+v39 [label = "+", style = filled, color = aliceblue]
+v40 [label = "*", style = filled, color = aliceblue]
+v41 [label = "*", style = filled, color = aliceblue]
+v42 [label = "*", style = filled, color = aliceblue]
+v43 [label = "0.000000", style = filled, color = coral1]
+v44 [label = "cos", style = filled, color = antiquewhite]
+v45 [label = "0.000000", style = filled, color = coral1]
+v46 [label = "*", style = filled, color = aliceblue]
+v47 [label = "*", style = filled, color = aliceblue]
+v48 [label = "3.000000", style = filled, color = coral1]
 v49 [label = "*", style = filled, color = aliceblue]
-v50 [label = "2.000000", style = filled, color = coral1]
-v51 [label = "y", style = filled, color = chartreuse]
-v0->v1
-v0->v2
-{rank = same; v1, v2}
-v1->v5
-v1->v6
-{rank = same; v5, v6}
-v2->v21
-v2->v22
-{rank = same; v21, v22}
-v3->v9
-v4->v13
-v4->v14
-{rank = same; v13, v14}
-v5->v3
-v5->v4
-{rank = same; v3, v4}
-v6->v7
-v6->v8
+v50 [label = "*", style = filled, color = aliceblue]
+v51 [label = "2.000000", style = filled, color = coral1]
+v52 [label = "y", style = filled, color = chartreuse]
+v53 [label = "-1.000000", style = filled, color = coral1]
+v54 [label = "sin", style = filled, color = antiquewhite]
+v55 [label = "*", style = filled, color = aliceblue]
+v56 [label = "*", style = filled, color = aliceblue]
+v57 [label = "+", style = filled, color = aliceblue]
+v58 [label = "2.000000", style = filled, color = coral1]
+v59 [label = "y", style = filled, color = chartreuse]
+v60 [label = "y", style = filled, color = chartreuse]
+v61 [label = "0.000000", style = filled, color = coral1]
+v62 [label = "*", style = filled, color = aliceblue]
+v63 [label = "*", style = filled, color = aliceblue]
+v64 [label = "2.000000", style = filled, color = coral1]
+v65 [label = "1.000000", style = filled, color = coral1]
+v66 [label = "3.000000", style = filled, color = coral1]
+v67 [label = "cos", style = filled, color = antiquewhite]
+v68 [label = "*", style = filled, color = aliceblue]
+v69 [label = "2.000000", style = filled, color = coral1]
+v70 [label = "y", style = filled, color = chartreuse]
+v71 [label = "*", style = filled, color = aliceblue]
+v72 [label = "3.000000", style = filled, color = coral1]
+v73 [label = "cos", style = filled, color = antiquewhite]
+v74 [label = "*", style = filled, color = aliceblue]
+v75 [label = "2.000000", style = filled, color = coral1]
+v76 [label = "y", style = filled, color = chartreuse]
+v77 [label = "x", style = filled, color = chartreuse]
+v78 [label = "*", style = filled, color = aliceblue]
+v79 [label = "3.000000", style = filled, color = coral1]
+v80 [label = "cos", style = filled, color = antiquewhite]
+v81 [label = "*", style = filled, color = aliceblue]
+v82 [label = "2.000000", style = filled, color = coral1]
+v83 [label = "y", style = filled, color = chartreuse]
+v84 [label = "x", style = filled, color = chartreuse]
+v0->v7
+v0->v8
 {rank = same; v7, v8}
-v7->v15
-v8->v17
-v8->v18
-{rank = same; v17, v18}
+v1->v11
+v1->v17
+{rank = same; v11, v17}
+v2->v20
+v2->v21
+{rank = same; v20, v21}
+v3->v1
+v3->v2
+{rank = same; v1, v2}
+v4->v5
+v4->v6
+{rank = same; v5, v6}
+v5->v34
+v5->v36
+{rank = same; v34, v36}
+v6->v40
+v6->v41
+{rank = same; v40, v41}
+v7->v3
+v7->v4
+{rank = same; v3, v4}
+v8->v9
+v8->v10
+{rank = same; v9, v10}
+v9->v71
+v9->v77
+{rank = same; v71, v77}
+v10->v78
+v10->v84
+{rank = same; v78, v84}
 v11->v12
-v13->v10
-v13->v11
-{rank = same; v10, v11}
-v17->v16
-v20->v27
-v20->v28
-{rank = same; v27, v28}
-v21->v19
-v21->v20
-{rank = same; v19, v20}
-v22->v23
-v22->v24
-{rank = same; v23, v24}
-v23->v47
-v23->v48
-{rank = same; v47, v48}
-v25->v31
-v27->v25
-v27->v26
-{rank = same; v25, v26}
-v28->v29
-v28->v30
-{rank = same; v29, v30}
-v30->v37
-v30->v38
-{rank = same; v37, v38}
-v31->v32
-v31->v33
+v11->v13
+{rank = same; v12, v13}
+v13->v14
+v14->v15
+v14->v16
+{rank = same; v15, v16}
+v18->v24
+v19->v28
+v19->v29
+{rank = same; v28, v29}
+v20->v18
+v20->v19
+{rank = same; v18, v19}
+v21->v22
+v21->v23
+{rank = same; v22, v23}
+v22->v30
+v23->v32
+v23->v33
 {rank = same; v32, v33}
-v35->v36
-v36->v39
-v36->v40
-{rank = same; v39, v40}
-v37->v34
-v37->v35
-{rank = same; v34, v35}
-v38->v43
-v38->v44
-{rank = same; v43, v44}
-v43->v41
-v43->v42
-{rank = same; v41, v42}
-v44->v45
-v44->v46
-{rank = same; v45, v46}
-v48->v49
-v49->v50
-v49->v51
-{rank = same; v50, v51}
+v26->v27
+v28->v25
+v28->v26
+{rank = same; v25, v26}
+v32->v31
+v34->v35
+v36->v37
+v39->v46
+v39->v47
+{rank = same; v46, v47}
+v40->v38
+v40->v39
+{rank = same; v38, v39}
+v41->v42
+v41->v43
+{rank = same; v42, v43}
+v42->v66
+v42->v67
+{rank = same; v66, v67}
+v44->v50
+v46->v44
+v46->v45
+{rank = same; v44, v45}
+v47->v48
+v47->v49
+{rank = same; v48, v49}
+v49->v56
+v49->v57
+{rank = same; v56, v57}
+v50->v51
+v50->v52
+{rank = same; v51, v52}
+v54->v55
+v55->v58
+v55->v59
+{rank = same; v58, v59}
+v56->v53
+v56->v54
+{rank = same; v53, v54}
+v57->v62
+v57->v63
+{rank = same; v62, v63}
+v62->v60
+v62->v61
+{rank = same; v60, v61}
+v63->v64
+v63->v65
+{rank = same; v64, v65}
+v67->v68
+v68->v69
+v68->v70
+{rank = same; v69, v70}
+v71->v72
+v71->v73
+{rank = same; v72, v73}
+v73->v74
+v74->v75
+v74->v76
+{rank = same; v75, v76}
+v78->v79
+v78->v80
+{rank = same; v79, v80}
+v80->v81
+v81->v82
+v81->v83
+{rank = same; v82, v83}
 }

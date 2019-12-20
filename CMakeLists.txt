@@ -27,3 +27,8 @@ project(simplify_tree)
 set(CMAKE_CXX_STANDARD 17)
 include_directories("auxilary_functions")
 add_executable(simplify_tree main_files/simplifier.cpp)
+
+project(print_tree_latex)
+set(CMAKE_CXX_STANDARD 17)
+include_directories("auxilary_functions")
+add_executable(print_tree_latex main_files/LaTex_print.cpp)

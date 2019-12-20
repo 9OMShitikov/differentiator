@@ -17,8 +17,8 @@ cmath
 -
 strings_read_functions.h
 /home/oleg/Public/Oleg/course_2/ded/differentiator/main_files/strings_read_functions.h
-bor.cpp
-/home/oleg/Public/Oleg/course_2/ded/differentiator/main_files/bor.cpp
+bor.h
+/home/oleg/Public/Oleg/course_2/ded/differentiator/main_files/bor.h
 my_stack.h
 /home/oleg/Public/Oleg/course_2/ded/differentiator/main_files/my_stack.h
 my_stack.cpp
@@ -30,7 +30,9 @@ expression_parser.h
 tree_print.h
 /home/oleg/Public/Oleg/course_2/ded/differentiator/main_files/tree_print.h
 
-auxilary_functions/bor.cpp
+auxilary_functions/bor.h
+strings_read_functions.h
+auxilary_functions/strings_read_functions.h
 
 auxilary_functions/expression_parser.h
 info.h
@@ -41,6 +43,8 @@ my_stack.h
 auxilary_functions/my_stack.h
 
 auxilary_functions/info.h
+bor.h
+auxilary_functions/bor.h
 
 auxilary_functions/my_stack.cpp
 my_stack.h

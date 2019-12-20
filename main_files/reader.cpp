@@ -3,7 +3,7 @@
 #include <string.h>
 #include <cmath>
 #include "strings_read_functions.h"
-#include "bor.cpp"
+#include "bor.h"
 #include "my_stack.h"
 #include "my_stack.cpp"
 #include "node_structure.h"
@@ -11,6 +11,7 @@
 #include "expression_parser.h"
 #include "tree_print.h"
 
+//void read_tree ( AutoFree<char>& buff)
 int main(int args, char* argv[]) {
     AutoFree<char> buff;
     const char* input_file;

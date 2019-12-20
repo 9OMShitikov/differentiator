@@ -3,7 +3,7 @@
 //
 
 #ifndef DIFFERENTIATOR_INFO_H
-
+#include "bor.h"
 enum operators {
     SUM,
     SUB,

@@ -6,6 +6,7 @@
 #define PRINT_TREE_TREE_DFSS_H
 
 #include "info.h"
+#include "bor.h"
 const double eps = 0.001;
 bool is_equal_to (double a, double b) {
     return ((a - eps <= b) && (a + eps >= b));
@@ -369,4 +370,71 @@ int dfs_simplify (expression_tree& tree,
     return ret_val;
 }
 
+int dfs_latex (expression_tree& tree, int cur_node, AutoFree<char>& str_buff, size_t& size, size_t& taken, operators_definitions & op_defs, functions_definitions & func_defs) {
+    ASSERT(cur_node >= 0);
+    tree_node node = tree.tree_nodes.ptr[cur_node];
+    switch (node.type) {
+        case function_node: {
+            ASSERT(node.index >= 0);
+            ASSERT(node.first_link >= 0);
+            ASSERT(node.second_link == -1);
+            double first_value = 0;
+            add_string_to_buff(&(str_buff.ptr), size, taken, func_defs.functions_names[node.index]);
+            add_string_to_buff(&(str_buff.ptr), size, taken, "\\left(");
+            dfs_latex(tree, node.first_link, str_buff, size, taken, op_defs, func_defs);
+            add_string_to_buff(&(str_buff.ptr), size, taken, "\\right)");
+        }
+            break;
+        case operator_node: {
+            ASSERT(node.index >= 0);
+            ASSERT(node.first_link >= 0);
+            ASSERT(node.second_link >= 0);
+            switch (node.index) {
+                case DIV: {
+                    add_string_to_buff(&(str_buff.ptr), size, taken, " \\frac {");
+                } break;
+                default: {
+                    add_string_to_buff(&(str_buff.ptr), size, taken, "\\left(");
+                }
+            }
+            dfs_latex(tree, node.first_link, str_buff, size, taken, op_defs, func_defs);
+            switch (node.index) {
+                case DIV: {
+                    add_string_to_buff(&(str_buff.ptr), size, taken, "} {");
+                } break;
+                case MUL: {
+                    add_string_to_buff(&(str_buff.ptr), size, taken, " \\cdot ");
+                } break;
+                case SUM: {
+                    add_string_to_buff(&(str_buff.ptr), size, taken, " + ");
+                } break;
+                case SUB: {
+                    add_string_to_buff(&(str_buff.ptr), size, taken, " - ");
+                }
+            }
+            dfs_latex(tree, node.second_link, str_buff, size, taken, op_defs, func_defs);
+            switch (node.index) {
+                case DIV: {
+                    add_string_to_buff(&(str_buff.ptr), size, taken, "}");
+                } break;
+                default: {
+                    add_string_to_buff(&(str_buff.ptr), size, taken, "\\right)");
+                }
+            }
+        }
+            break;
+        case variable_node: {
+            ASSERT(node.index >= 0);
+            add_string_to_buff(&(str_buff.ptr), size, taken, tree.variables.ptr[node.index].name);
+        }
+            break;
+        case constant_node: {
+            char c[128];
+            snprintf(c, 127, "%f", node.value);
+            add_string_to_buff(&(str_buff.ptr), size, taken, c);
+        }
+            break;
+    }
+    return 0;
+}
 #endif //PRINT_TREE_TREE_DFSS_H

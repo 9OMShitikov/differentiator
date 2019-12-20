@@ -4,7 +4,7 @@
 #include <string.h>
 #include <cmath>
 #include "strings_read_functions.h"
-#include "bor.cpp"
+#include "bor.h"
 #include "my_stack.h"
 #include "my_stack.cpp"
 #include "node_structure.h"

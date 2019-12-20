@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/simplify_tree.dir/main_files/simplifier.cpp.o"
-  "simplify_tree.pdb"
   "simplify_tree"
+  "simplify_tree.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

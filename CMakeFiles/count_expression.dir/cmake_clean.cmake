@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/count_expression.dir/main_files/count_tree.cpp.o"
-  "count_expression.pdb"
   "count_expression"
+  "count_expression.pdb"
 )
 
 # Per-language clean rules from dependency scanning.
