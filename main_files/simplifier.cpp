@@ -22,16 +22,20 @@ int main(int argc, char* argv[]) {
     if (argc > 2) output_file = argv[2];
     else output_file = "simplify_result.txt";
 
-    expression_tree tree;
+    expression_tree tree, buff_tree;
     tree.read_tree(input_file);
-
+    buff_tree.copy_tree(tree);
     operators_definitions op_defs;
     functions_definitions func_defs;
 
     my_stack<tree_node> new_tree;
     new_tree.push_back(tree_node());
-
-    dfs_simplify(tree, new_tree, 0, 0, op_defs, func_defs);
-    int nodes_count = new_tree.size();
-    tree_print(tree.variables_count, nodes_count,  new_tree.get_ptr(), tree.variables.ptr, output_file);
+    int f = 1;
+    while (f) {
+        f = dfs_simplify(buff_tree, new_tree, 0, 0, op_defs, func_defs);
+        buff_tree.copy_tree_nodes(new_tree.size(),  new_tree.get_ptr());
+        while (new_tree.size() > 0) new_tree.pop_back();
+        new_tree.push_back(tree_node());
+    }
+    buff_tree.print_tree(output_file);
 }

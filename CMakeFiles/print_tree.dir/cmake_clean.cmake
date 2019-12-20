@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/print_tree.dir/main_files/print_tree.cpp.o"
-  "print_tree"
   "print_tree.pdb"
+  "print_tree"
 )
 
 # Per-language clean rules from dependency scanning.

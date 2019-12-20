@@ -79,6 +79,8 @@ iostream
 -
 
 auxilary_functions/tree_dfss.h
+info.h
+auxilary_functions/info.h
 
 auxilary_functions/tree_print.h
 

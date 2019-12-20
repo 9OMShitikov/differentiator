@@ -1,0 +1,48 @@
+digraph expression_tree {
+v0 [label = "-", style = filled, color = aliceblue]
+v1 [label = "+", style = filled, color = aliceblue]
+v2 [label = "*", style = filled, color = aliceblue]
+v3 [label = "sin", style = filled, color = antiquewhite]
+v4 [label = "x", style = filled, color = chartreuse]
+v5 [label = "*", style = filled, color = aliceblue]
+v6 [label = "-1.000000", style = filled, color = coral1]
+v7 [label = "sin", style = filled, color = antiquewhite]
+v8 [label = "x", style = filled, color = chartreuse]
+v9 [label = "*", style = filled, color = aliceblue]
+v10 [label = "cos", style = filled, color = antiquewhite]
+v11 [label = "x", style = filled, color = chartreuse]
+v12 [label = "cos", style = filled, color = antiquewhite]
+v13 [label = "x", style = filled, color = chartreuse]
+v14 [label = "*", style = filled, color = aliceblue]
+v15 [label = "3.000000", style = filled, color = coral1]
+v16 [label = "cos", style = filled, color = antiquewhite]
+v17 [label = "*", style = filled, color = aliceblue]
+v18 [label = "2.000000", style = filled, color = coral1]
+v19 [label = "y", style = filled, color = chartreuse]
+v0->v1
+v0->v14
+{rank = same; v1, v14}
+v1->v2
+v1->v9
+{rank = same; v2, v9}
+v2->v3
+v2->v5
+{rank = same; v3, v5}
+v3->v4
+v5->v6
+v5->v7
+{rank = same; v6, v7}
+v7->v8
+v9->v10
+v9->v12
+{rank = same; v10, v12}
+v10->v11
+v12->v13
+v14->v15
+v14->v16
+{rank = same; v15, v16}
+v16->v17
+v17->v18
+v17->v19
+{rank = same; v18, v19}
+}

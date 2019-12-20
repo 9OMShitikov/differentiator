@@ -1,0 +1,35 @@
+digraph expression_tree {
+v0 [label = "-", style = filled, color = aliceblue]
+v1 [label = "0.000000", style = filled, color = coral1]
+v2 [label = "*", style = filled, color = aliceblue]
+v3 [label = "x", style = filled, color = chartreuse]
+v4 [label = "*", style = filled, color = aliceblue]
+v5 [label = "3.000000", style = filled, color = coral1]
+v6 [label = "*", style = filled, color = aliceblue]
+v7 [label = "*", style = filled, color = aliceblue]
+v8 [label = "-1.000000", style = filled, color = coral1]
+v9 [label = "sin", style = filled, color = antiquewhite]
+v10 [label = "*", style = filled, color = aliceblue]
+v11 [label = "2.000000", style = filled, color = coral1]
+v12 [label = "y", style = filled, color = chartreuse]
+v13 [label = "2.000000", style = filled, color = coral1]
+v0->v1
+v0->v2
+{rank = same; v1, v2}
+v2->v3
+v2->v4
+{rank = same; v3, v4}
+v4->v5
+v4->v6
+{rank = same; v5, v6}
+v6->v7
+v6->v13
+{rank = same; v7, v13}
+v7->v8
+v7->v9
+{rank = same; v8, v9}
+v9->v10
+v10->v11
+v10->v12
+{rank = same; v11, v12}
+}

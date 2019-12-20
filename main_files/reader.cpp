@@ -43,7 +43,12 @@ int main(int args, char* argv[]) {
         strcpy(variables[i].name, variables_names[i]);
     }
 
-    tree_print(variables_count, nodes_count, tree.get_ptr(), variables, output_file);
+    expression_tree my_tree, my_new_tree;
+    my_tree.generate_tree(variables_count, nodes_count, tree.get_ptr(), variables);
+    my_new_tree.generate_tree(my_tree.variables_count, my_tree.nodes_count, my_tree.tree_nodes.ptr,
+            my_tree.variables.ptr);
+    my_new_tree.copy_tree_nodes(my_tree.nodes_count, my_tree.tree_nodes.ptr);
+    my_new_tree.print_tree(output_file);
     for (int i = 0; i < 100; ++i) delete(variables_names[i]);
     return 0;
 }

@@ -116,7 +116,7 @@ bool my_stack<T>::pop_back() {
     CHECK
     if (buff->size <= 0) return 0;
     buff->size--;
-    ~(buff->buff[buff->size]);
+    buff->buff[buff->size].~T();
     if (buff->size * 2 >= 4 && buff->size * 4 < buff->buff_size) {
         buff->buff_size = buff->size * 2;
         buff = (stack_buffer*) realloc(buff, 4 * 6 + 1 + 4 + buff->buff_size * sizeof(T));
@@ -124,7 +124,7 @@ bool my_stack<T>::pop_back() {
     }
     buff -> buff_size_copy = buff->buff_size;
     buff -> size_copy = buff->size;
-    buff -> hsh = get_hash(reinterpret_cast<char*>(&(buff->buff)), buff->size * sizeof(T));
+    //buff -> hsh = get_hash(reinterpret_cast<char*>(&(buff->buff)), buff->size * sizeof(T));
     CHECK
     return 1;
 }
