@@ -3,10 +3,13 @@
 
 CMakeFiles/print_tree.dir/main_files/print_tree.cpp.o: main_files/print_tree.cpp
 CMakeFiles/print_tree.dir/main_files/print_tree.cpp.o: auxilary_functions/bor.h
+CMakeFiles/print_tree.dir/main_files/print_tree.cpp.o: auxilary_functions/expression_parser.h
 CMakeFiles/print_tree.dir/main_files/print_tree.cpp.o: auxilary_functions/info.h
 CMakeFiles/print_tree.dir/main_files/print_tree.cpp.o: auxilary_functions/my_stack.cpp
 CMakeFiles/print_tree.dir/main_files/print_tree.cpp.o: auxilary_functions/my_stack.h
 CMakeFiles/print_tree.dir/main_files/print_tree.cpp.o: auxilary_functions/node_structure.h
 CMakeFiles/print_tree.dir/main_files/print_tree.cpp.o: auxilary_functions/print_tree_functions.h
 CMakeFiles/print_tree.dir/main_files/print_tree.cpp.o: auxilary_functions/strings_read_functions.h
+CMakeFiles/print_tree.dir/main_files/print_tree.cpp.o: auxilary_functions/tree_dfss.h
+CMakeFiles/print_tree.dir/main_files/print_tree.cpp.o: auxilary_functions/tree_process_functions.h
 

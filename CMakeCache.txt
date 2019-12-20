@@ -136,7 +136,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=print_tree_latex
+CMAKE_PROJECT_NAME:STATIC=print_latex_referat
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -198,6 +198,12 @@ differentiate_tree_BINARY_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differe
 
 //Value Computed by CMake
 differentiate_tree_SOURCE_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentiator
+
+//Value Computed by CMake
+print_latex_referat_BINARY_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentiator
+
+//Value Computed by CMake
+print_latex_referat_SOURCE_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentiator
 
 //Value Computed by CMake
 print_tree_BINARY_DIR:STATIC=/home/oleg/Public/Oleg/course_2/ded/differentiator

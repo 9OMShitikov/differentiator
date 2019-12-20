@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/print_latex_referat.dir/main_files/print_referat.cpp.o  -o print_latex_referat 

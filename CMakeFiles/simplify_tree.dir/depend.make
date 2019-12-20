@@ -12,4 +12,5 @@ CMakeFiles/simplify_tree.dir/main_files/simplifier.cpp.o: auxilary_functions/pri
 CMakeFiles/simplify_tree.dir/main_files/simplifier.cpp.o: auxilary_functions/strings_read_functions.h
 CMakeFiles/simplify_tree.dir/main_files/simplifier.cpp.o: auxilary_functions/tree_dfss.h
 CMakeFiles/simplify_tree.dir/main_files/simplifier.cpp.o: auxilary_functions/tree_print.h
+CMakeFiles/simplify_tree.dir/main_files/simplifier.cpp.o: auxilary_functions/tree_process_functions.h
 

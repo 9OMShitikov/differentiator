@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /home/oleg/Public/Oleg/course_2/ded/differentiator
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/print_latex_referat.dir/all
 all: CMakeFiles/count_expression.dir/all
 all: CMakeFiles/read_expression.dir/all
 all: CMakeFiles/print_tree.dir/all
@@ -63,6 +64,7 @@ all: CMakeFiles/simplify_tree.dir/all
 .PHONY : all
 
 # The main recursive "clean" target.
+clean: CMakeFiles/print_latex_referat.dir/clean
 clean: CMakeFiles/count_expression.dir/clean
 clean: CMakeFiles/read_expression.dir/clean
 clean: CMakeFiles/print_tree.dir/clean
@@ -76,6 +78,33 @@ clean: CMakeFiles/simplify_tree.dir/clean
 preinstall:
 
 .PHONY : preinstall
+
+#=============================================================================
+# Target rules for target CMakeFiles/print_latex_referat.dir
+
+# All Build rule for target.
+CMakeFiles/print_latex_referat.dir/all:
+	$(MAKE) -f CMakeFiles/print_latex_referat.dir/build.make CMakeFiles/print_latex_referat.dir/depend
+	$(MAKE) -f CMakeFiles/print_latex_referat.dir/build.make CMakeFiles/print_latex_referat.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=5,6 "Built target print_latex_referat"
+.PHONY : CMakeFiles/print_latex_referat.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/print_latex_referat.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/print_latex_referat.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles 0
+.PHONY : CMakeFiles/print_latex_referat.dir/rule
+
+# Convenience name for target.
+print_latex_referat: CMakeFiles/print_latex_referat.dir/rule
+
+.PHONY : print_latex_referat
+
+# clean rule for target.
+CMakeFiles/print_latex_referat.dir/clean:
+	$(MAKE) -f CMakeFiles/print_latex_referat.dir/build.make CMakeFiles/print_latex_referat.dir/clean
+.PHONY : CMakeFiles/print_latex_referat.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/count_expression.dir
@@ -111,7 +140,7 @@ CMakeFiles/count_expression.dir/clean:
 CMakeFiles/read_expression.dir/all:
 	$(MAKE) -f CMakeFiles/read_expression.dir/build.make CMakeFiles/read_expression.dir/depend
 	$(MAKE) -f CMakeFiles/read_expression.dir/build.make CMakeFiles/read_expression.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=9,10 "Built target read_expression"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=11,12 "Built target read_expression"
 .PHONY : CMakeFiles/read_expression.dir/all
 
 # Build rule for subdir invocation for target.
@@ -138,7 +167,7 @@ CMakeFiles/read_expression.dir/clean:
 CMakeFiles/print_tree.dir/all:
 	$(MAKE) -f CMakeFiles/print_tree.dir/build.make CMakeFiles/print_tree.dir/depend
 	$(MAKE) -f CMakeFiles/print_tree.dir/build.make CMakeFiles/print_tree.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=5,6 "Built target print_tree"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=7,8 "Built target print_tree"
 .PHONY : CMakeFiles/print_tree.dir/all
 
 # Build rule for subdir invocation for target.
@@ -192,7 +221,7 @@ CMakeFiles/differentiate_tree.dir/clean:
 CMakeFiles/print_tree_latex.dir/all:
 	$(MAKE) -f CMakeFiles/print_tree_latex.dir/build.make CMakeFiles/print_tree_latex.dir/depend
 	$(MAKE) -f CMakeFiles/print_tree_latex.dir/build.make CMakeFiles/print_tree_latex.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=7,8 "Built target print_tree_latex"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=9,10 "Built target print_tree_latex"
 .PHONY : CMakeFiles/print_tree_latex.dir/all
 
 # Build rule for subdir invocation for target.
@@ -219,7 +248,7 @@ CMakeFiles/print_tree_latex.dir/clean:
 CMakeFiles/simplify_tree.dir/all:
 	$(MAKE) -f CMakeFiles/simplify_tree.dir/build.make CMakeFiles/simplify_tree.dir/depend
 	$(MAKE) -f CMakeFiles/simplify_tree.dir/build.make CMakeFiles/simplify_tree.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=11,12 "Built target simplify_tree"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/oleg/Public/Oleg/course_2/ded/differentiator/CMakeFiles --progress-num=13,14 "Built target simplify_tree"
 .PHONY : CMakeFiles/simplify_tree.dir/all
 
 # Build rule for subdir invocation for target.

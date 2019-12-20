@@ -9,5 +9,7 @@ CMakeFiles/read_expression.dir/main_files/reader.cpp.o
  auxilary_functions/my_stack.cpp
  auxilary_functions/my_stack.h
  auxilary_functions/node_structure.h
+ auxilary_functions/print_tree_functions.h
  auxilary_functions/strings_read_functions.h
- auxilary_functions/tree_print.h
+ auxilary_functions/tree_dfss.h
+ auxilary_functions/tree_process_functions.h

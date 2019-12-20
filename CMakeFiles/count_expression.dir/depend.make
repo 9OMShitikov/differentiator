@@ -8,7 +8,9 @@ CMakeFiles/count_expression.dir/main_files/count_tree.cpp.o: auxilary_functions/
 CMakeFiles/count_expression.dir/main_files/count_tree.cpp.o: auxilary_functions/my_stack.cpp
 CMakeFiles/count_expression.dir/main_files/count_tree.cpp.o: auxilary_functions/my_stack.h
 CMakeFiles/count_expression.dir/main_files/count_tree.cpp.o: auxilary_functions/node_structure.h
+CMakeFiles/count_expression.dir/main_files/count_tree.cpp.o: auxilary_functions/print_tree_functions.h
 CMakeFiles/count_expression.dir/main_files/count_tree.cpp.o: auxilary_functions/strings_read_functions.h
 CMakeFiles/count_expression.dir/main_files/count_tree.cpp.o: auxilary_functions/tree_dfss.h
 CMakeFiles/count_expression.dir/main_files/count_tree.cpp.o: auxilary_functions/tree_print.h
+CMakeFiles/count_expression.dir/main_files/count_tree.cpp.o: auxilary_functions/tree_process_functions.h
 

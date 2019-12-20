@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/snap/clion/99/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/snap/clion/98/bin/cmake/linux/bin/ccmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -109,6 +109,19 @@ preinstall/fast:
 depend:
 	$(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
+
+#=============================================================================
+# Target rules for targets named print_latex_referat
+
+# Build rule for target.
+print_latex_referat: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 print_latex_referat
+.PHONY : print_latex_referat
+
+# fast build rule for target.
+print_latex_referat/fast:
+	$(MAKE) -f CMakeFiles/print_latex_referat.dir/build.make CMakeFiles/print_latex_referat.dir/build
+.PHONY : print_latex_referat/fast
 
 #=============================================================================
 # Target rules for targets named count_expression
@@ -269,6 +282,33 @@ main_files/differentiator.cpp.s:
 	$(MAKE) -f CMakeFiles/differentiate_tree.dir/build.make CMakeFiles/differentiate_tree.dir/main_files/differentiator.cpp.s
 .PHONY : main_files/differentiator.cpp.s
 
+main_files/print_referat.o: main_files/print_referat.cpp.o
+
+.PHONY : main_files/print_referat.o
+
+# target to build an object file
+main_files/print_referat.cpp.o:
+	$(MAKE) -f CMakeFiles/print_latex_referat.dir/build.make CMakeFiles/print_latex_referat.dir/main_files/print_referat.cpp.o
+.PHONY : main_files/print_referat.cpp.o
+
+main_files/print_referat.i: main_files/print_referat.cpp.i
+
+.PHONY : main_files/print_referat.i
+
+# target to preprocess a source file
+main_files/print_referat.cpp.i:
+	$(MAKE) -f CMakeFiles/print_latex_referat.dir/build.make CMakeFiles/print_latex_referat.dir/main_files/print_referat.cpp.i
+.PHONY : main_files/print_referat.cpp.i
+
+main_files/print_referat.s: main_files/print_referat.cpp.s
+
+.PHONY : main_files/print_referat.s
+
+# target to generate assembly for a file
+main_files/print_referat.cpp.s:
+	$(MAKE) -f CMakeFiles/print_latex_referat.dir/build.make CMakeFiles/print_latex_referat.dir/main_files/print_referat.cpp.s
+.PHONY : main_files/print_referat.cpp.s
+
 main_files/print_tree.o: main_files/print_tree.cpp.o
 
 .PHONY : main_files/print_tree.o
@@ -358,6 +398,7 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... print_latex_referat"
 	@echo "... count_expression"
 	@echo "... read_expression"
 	@echo "... print_tree"
@@ -373,6 +414,9 @@ help:
 	@echo "... main_files/differentiator.o"
 	@echo "... main_files/differentiator.i"
 	@echo "... main_files/differentiator.s"
+	@echo "... main_files/print_referat.o"
+	@echo "... main_files/print_referat.i"
+	@echo "... main_files/print_referat.s"
 	@echo "... main_files/print_tree.o"
 	@echo "... main_files/print_tree.i"
 	@echo "... main_files/print_tree.s"

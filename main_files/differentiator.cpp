@@ -13,6 +13,8 @@
 #include "tree_print.h"
 #include "tree_dfss.h"
 
+#include "tree_process_functions.h"
+
 int main(int argc, char* argv[]) {
     const char *input_file = nullptr;
     if (argc > 1) input_file = argv[1];
@@ -24,12 +26,6 @@ int main(int argc, char* argv[]) {
 
     expression_tree tree;
     tree.read_tree(input_file);
-
-    operators_definitions op_defs;
-    functions_definitions func_defs;
-
-    my_stack<tree_node> new_tree;
-    new_tree.push_back(tree_node());
 
     printf("Variables: \n");
     bor variables_bor;
@@ -48,7 +44,7 @@ int main(int argc, char* argv[]) {
         else printf("Please, repeat\n");
     }
 
-    dfs_differentiate(tree, new_tree, 0, 0, op_defs, func_defs, k);
-    int nodes_count = new_tree.size();
-    tree_print(tree.variables_count, nodes_count,  new_tree.get_ptr(), tree.variables.ptr, output_file);
+    expression_tree result;
+    differentiate_tree(result, tree, k);
+    result.print_tree(output_file);
 }

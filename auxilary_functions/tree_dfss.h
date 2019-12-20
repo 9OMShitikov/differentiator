@@ -430,7 +430,7 @@ int dfs_latex (expression_tree& tree, int cur_node, AutoFree<char>& str_buff, si
             break;
         case constant_node: {
             char c[128];
-            snprintf(c, 127, "%f", node.value);
+            snprintf(c, 127, "%.2f", node.value);
             add_string_to_buff(&(str_buff.ptr), size, taken, c);
         }
             break;

@@ -8,6 +8,8 @@ CMakeFiles/read_expression.dir/main_files/reader.cpp.o: auxilary_functions/info.
 CMakeFiles/read_expression.dir/main_files/reader.cpp.o: auxilary_functions/my_stack.cpp
 CMakeFiles/read_expression.dir/main_files/reader.cpp.o: auxilary_functions/my_stack.h
 CMakeFiles/read_expression.dir/main_files/reader.cpp.o: auxilary_functions/node_structure.h
+CMakeFiles/read_expression.dir/main_files/reader.cpp.o: auxilary_functions/print_tree_functions.h
 CMakeFiles/read_expression.dir/main_files/reader.cpp.o: auxilary_functions/strings_read_functions.h
-CMakeFiles/read_expression.dir/main_files/reader.cpp.o: auxilary_functions/tree_print.h
+CMakeFiles/read_expression.dir/main_files/reader.cpp.o: auxilary_functions/tree_dfss.h
+CMakeFiles/read_expression.dir/main_files/reader.cpp.o: auxilary_functions/tree_process_functions.h
 

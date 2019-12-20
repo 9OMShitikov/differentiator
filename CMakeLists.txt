@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
 
-
-
 project(read_expression)
 set(CMAKE_CXX_STANDARD 17)
 include_directories("auxilary_functions")
@@ -11,7 +9,6 @@ project(count_expression)
 set(CMAKE_CXX_STANDARD 17)
 include_directories("auxilary_functions")
 add_executable(count_expression main_files/count_tree.cpp)
-
 
 project(print_tree)
 set(CMAKE_CXX_STANDARD 17)
@@ -32,3 +29,8 @@ project(print_tree_latex)
 set(CMAKE_CXX_STANDARD 17)
 include_directories("auxilary_functions")
 add_executable(print_tree_latex main_files/LaTex_print.cpp)
+
+project(print_latex_referat)
+set(CMAKE_CXX_STANDARD 17)
+include_directories("auxilary_functions")
+add_executable(print_latex_referat main_files/print_referat.cpp)

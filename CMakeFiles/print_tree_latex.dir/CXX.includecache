@@ -31,6 +31,8 @@ tree_print.h
 /home/oleg/Public/Oleg/course_2/ded/differentiator/main_files/tree_print.h
 tree_dfss.h
 /home/oleg/Public/Oleg/course_2/ded/differentiator/main_files/tree_dfss.h
+tree_process_functions.h
+/home/oleg/Public/Oleg/course_2/ded/differentiator/main_files/tree_process_functions.h
 
 auxilary_functions/bor.h
 strings_read_functions.h
@@ -64,6 +66,10 @@ auxilary_functions/node_structure.h
 strings_read_functions.h
 auxilary_functions/strings_read_functions.h
 
+auxilary_functions/print_tree_functions.h
+node_structure.h
+auxilary_functions/node_structure.h
+
 auxilary_functions/strings_read_functions.h
 string_view
 -
@@ -81,4 +87,12 @@ bor.h
 auxilary_functions/bor.h
 
 auxilary_functions/tree_print.h
+
+auxilary_functions/tree_process_functions.h
+expression_parser.h
+auxilary_functions/expression_parser.h
+tree_dfss.h
+auxilary_functions/tree_dfss.h
+print_tree_functions.h
+auxilary_functions/print_tree_functions.h
 

@@ -12,4 +12,5 @@ CMakeFiles/differentiate_tree.dir/main_files/differentiator.cpp.o: auxilary_func
 CMakeFiles/differentiate_tree.dir/main_files/differentiator.cpp.o: auxilary_functions/strings_read_functions.h
 CMakeFiles/differentiate_tree.dir/main_files/differentiator.cpp.o: auxilary_functions/tree_dfss.h
 CMakeFiles/differentiate_tree.dir/main_files/differentiator.cpp.o: auxilary_functions/tree_print.h
+CMakeFiles/differentiate_tree.dir/main_files/differentiator.cpp.o: auxilary_functions/tree_process_functions.h
 
