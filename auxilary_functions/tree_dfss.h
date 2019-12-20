@@ -318,6 +318,21 @@ int dfs_simplify (expression_tree& tree,
                                 }
                             }
                             break;
+                        /*case POW:
+                        {
+                            if (is_zero(tree.tree_nodes.ptr[node.first_link].value)) {
+                                new_tree.get_ptr()[cur_new_tree_node] = tree_node(0);
+                                fl = 1;
+                                ret_val = 1;
+                            }
+
+                            if (is_one(tree.tree_nodes.ptr[node.first_link].value)) {
+                                    new_tree.get_ptr()[cur_new_tree_node] = tree_node(0);
+                                    fl = 1;
+                                    ret_val = 1;
+                                }
+                        }
+                            break;*/
                     }
                 }
             }
@@ -376,6 +391,26 @@ int dfs_simplify (expression_tree& tree,
                         ASSERT(!is_zero(tree.tree_nodes.ptr[node.second_link].value));
                     }
                         break;
+                    case POW:
+                    {
+                        if (is_zero(tree.tree_nodes.ptr[node.second_link].value)) {
+                            new_tree.get_ptr()[cur_new_tree_node] = tree_node(1);
+                            fl = 1;
+                            ret_val = 1;
+                        }
+
+                        if (is_one(tree.tree_nodes.ptr[node.second_link].value)) {
+                            dfs_simplify(tree,
+                                         new_tree,
+                                         node.first_link,
+                                         cur_new_tree_node,
+                                         op_defs,
+                                         func_defs);
+                            fl = 1;
+                            ret_val = 1;
+                        }
+                    }
+                        break;
                 }
             }
             if (!fl) {
@@ -430,6 +465,8 @@ int dfs_latex (expression_tree& tree, int cur_node, AutoFree<char>& str_buff, si
                 case DIV: {
                     add_string_to_buff(&(str_buff.ptr), size, taken, " \\frac {");
                 } break;
+                case POW: {}
+                break;
                 default: {
                     add_string_to_buff(&(str_buff.ptr), size, taken, "\\left(");
                 }
@@ -447,11 +484,17 @@ int dfs_latex (expression_tree& tree, int cur_node, AutoFree<char>& str_buff, si
                 } break;
                 case SUB: {
                     add_string_to_buff(&(str_buff.ptr), size, taken, " - ");
+                } break;
+                case POW: {
+                    add_string_to_buff(&(str_buff.ptr), size, taken, " ^ {");
                 }
             }
             dfs_latex(tree, node.second_link, str_buff, size, taken, op_defs, func_defs);
             switch (node.index) {
                 case DIV: {
+                    add_string_to_buff(&(str_buff.ptr), size, taken, "}");
+                } break;
+                case POW: {
                     add_string_to_buff(&(str_buff.ptr), size, taken, "}");
                 } break;
                 default: {
@@ -467,7 +510,7 @@ int dfs_latex (expression_tree& tree, int cur_node, AutoFree<char>& str_buff, si
             break;
         case constant_node: {
             char c[128];
-            snprintf(c, 127, "%.2f", node.value);
+            snprintf(c, 127, "%.4g", node.value);
             add_string_to_buff(&(str_buff.ptr), size, taken, c);
         }
             break;
